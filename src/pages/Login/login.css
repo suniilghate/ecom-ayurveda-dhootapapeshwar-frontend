@@ -1,24 +1,52 @@
-/* Page background */
+/* Full page background */
 .login-page {
   min-height: 100vh;
-  background-color: #0F172A;
+  background-color: var(--bg-main);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* Login card */
+/* Dark card */
 .login-card {
-  background-color: #1E293B;
-  color: #F8FAFC;
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary);
   border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px; /* card width responsive */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 2rem;
+}
+
+/* Logo inside card */
+.login-card img {
+  display: block;
+  max-width: 120px; /* adjust as needed */
+  height: auto;
+  margin-bottom: 15px;
+  margin-left: 0; /* left align */
+}
+
+/* Heading & paragraph */
+.login-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.login-card p {
+  color: var(--text-muted);
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 /* Inputs */
 .login-card .form-control {
-  background-color: #0F172A;
-  border: 1px solid #334155;
-  color: #F8FAFC;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.25rem;
 }
 
 .login-card .form-control::placeholder {
@@ -27,30 +55,69 @@
 
 /* Labels */
 .login-card .form-label {
-  color: #E5E7EB;
+  color: var(--text-primary);
 }
 
 /* Checkbox */
-.login-card .form-check-input {
-  background-color: #0F172A;
-  border-color: #64748B;
+.login-card .form-check-label {
+  color: var(--text-primary);
+}
+
+/* Buttons */
+/* .login-card .btn-primary {
+  background-color: var(--btn-primary);
+  border-color: var(--btn-primary);
+  border-radius: 0.25rem;
+} */
+
+.login-card .btn-primary:hover {
+  background-color: var(--btn-primary-hover);
 }
 
 /* Links */
 .login-card a {
-  color: #38BDF8;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 .login-card a:hover {
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+
+  .login-card img {
+    max-width: 100px;
+  }
+}
+
+/* Heading: Sign In */
+.login-title {
+  color: #60A5FA !important;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Forgot password link */
+.forgot-password {
+  color: #60A5FA !important;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* On hover – optional but recommended */
+.forgot-password:hover {
   text-decoration: underline;
 }
 
-/* Button */
-.login-card .btn-primary {
-  background-color: #2563EB;
-  border-color: #2563EB;
-}
-
-.login-card .btn-primary:hover {
-  background-color: #1D4ED8;
+/* Prevent global <a> styles from overriding */
+.login-container a {
+  color: #37293B;
+  text-decoration: none;
 }

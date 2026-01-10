@@ -1,0 +1,77 @@
+/* Card */
+.register-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.register-card .btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+/* Text */
+.register-card p,
+.register-card label {
+  color: var(--text-primary);
+}
+
+/* Inputs */
+.register-card .form-control {
+  background-color: #0F172A;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.register-card .form-control::placeholder {
+  color: var(--text-secondary);
+}
+
+.register-card .form-control:focus {
+  background-color: #0F172A;
+  border-color: #6366F1;
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+/* Logo */
+.register-logo {
+  max-width: 140px;
+  height: auto;
+}
+
+/* Links */
+.auth-link,
+.policy-link {
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-link:hover,
+.policy-link:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.register-card .form-check-label {
+  color: var(--text-primary);
+}
+
+/* Terms & Privacy clickable text */
+.policy-link {
+  color: #60A5FA;          /* visible blue */
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.policy-link:hover {
+  text-decoration: underline;
+}
+
+/* Heading: Sign In */
+.login-title {
+  color: #60A5FA !important;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}

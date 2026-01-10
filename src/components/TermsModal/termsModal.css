@@ -1,0 +1,57 @@
+/* Backdrop */
+.custom-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+/* Modal card */
+.custom-modal-wrapper {
+  background-color: #1E293B;
+  color: #E5E7EB;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.custom-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #334155;
+}
+
+.custom-modal-title {
+  margin: 0;
+}
+
+/* Close */
+.custom-modal-close {
+  background: none;
+  border: none;
+  color: #E5E7EB;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Body */
+.custom-modal-body {
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.custom-modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #334155;
+  text-align: right;
+}

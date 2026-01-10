@@ -1,82 +1,75 @@
-import { Link } from "react-router-dom"
-import "./login.css"
+import React from "react";
+import "./login.css";
 
 const Login = () => {
   return (
-    <div className="login-page">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-8 col-lg-6 col-xxl-4">
+    <main className="login-page">
+      <div className="login-card card smooth-shadow-md">
+        <div className="card-body">
+          <div className="mb-4">
+            <a href="/">
+              <img src="/SDL_INDEX.png" alt="Logo" />
+            </a>
+            <p>Please enter your user information.</p>
+          </div>
 
-            <div className="card login-card shadow-sm">
-              <div className="card-body p-4 p-md-5">
-
-                <div className="mb-4 text-center">
-                  <h3 className="mb-2">Sign In</h3>
-                  <p className="text-muted">
-                    Please enter your user information
-                  </p>
-                </div>
-
-                <form>
-                  <div className="mb-3">
-                    <label className="form-label">
-                      Username or Email
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Email address"
-                    />
-                  </div>
-
-                  <div className="mb-3">
-                    <label className="form-label">
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="********"
-                    />
-                  </div>
-
-                  <div className="d-flex justify-content-between align-items-center mb-4">
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="rememberMe"
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="rememberMe"
-                      >
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="d-grid">
-                    <button type="submit" className="btn btn-primary">
-                      Sign In
-                    </button>
-                  </div>
-
-                  <div className="d-flex justify-content-between mt-4">
-                    <Link to="/register">Create an account</Link>
-                    <Link to="/forgot-password">Forgot password?</Link>
-                  </div>
-                </form>
-
-              </div>
+          <form>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Username or email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="form-control"
+                placeholder="Email address here"
+                required
+              />
             </div>
 
-          </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="form-control"
+                placeholder="**************"
+                required
+              />
+            </div>
+
+            <div className="mb-3 form-check">
+              <input
+                type="checkbox"
+                id="rememberme"
+                className="form-check-input"
+              />
+              <label className="form-check-label" htmlFor="rememberme">
+                Remember me
+              </label>
+            </div>
+
+            <div className="d-grid mb-3">
+              <button type="submit" className="btn btn-primary">
+                Sign in
+              </button>
+            </div>
+            
+            <div className="d-flex justify-content-between">
+              <a href="/register" className="fs-6 login-title">
+                Sign Up
+              </a>
+              <a href="/forgot-password" className="fs-6 forgot-password">
+                Forgot your password?
+              </a>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-  )
-}
+    </main>
+  );
+};
 
-export default Login
+export default Login;

@@ -1,0 +1,14 @@
+:root {
+  --app-bg: #0F172A;
+  --card-bg: #1E293B;
+  --text-primary: #E5E7EB;
+  --text-secondary: #94A3B8;
+  --link-color: #37293B;
+  --border-color: #334155;
+}
+
+/* Global app background */
+body {
+  background-color: var(--app-bg) !important;
+  color: var(--text-primary);
+}
