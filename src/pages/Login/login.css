@@ -1,0 +1,56 @@
+/* Page background */
+.login-page {
+  min-height: 100vh;
+  background-color: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login card */
+.login-card {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  border-radius: 0.5rem;
+}
+
+/* Inputs */
+.login-card .form-control {
+  background-color: #0F172A;
+  border: 1px solid #334155;
+  color: #F8FAFC;
+}
+
+.login-card .form-control::placeholder {
+  color: #94A3B8;
+}
+
+/* Labels */
+.login-card .form-label {
+  color: #E5E7EB;
+}
+
+/* Checkbox */
+.login-card .form-check-input {
+  background-color: #0F172A;
+  border-color: #64748B;
+}
+
+/* Links */
+.login-card a {
+  color: #38BDF8;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.login-card .btn-primary {
+  background-color: #2563EB;
+  border-color: #2563EB;
+}
+
+.login-card .btn-primary:hover {
+  background-color: #1D4ED8;
+}
