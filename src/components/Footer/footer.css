@@ -1,0 +1,9 @@
+.app-footer {
+  height: 60px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}

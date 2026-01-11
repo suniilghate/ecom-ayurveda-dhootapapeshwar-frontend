@@ -1,6 +1,25 @@
+import { useState } from "react";
 import "./forgotPassword.css";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      toast.warning("Invalid email address");
+      return;
+    }
+
+    toast.success("Password reset link sent to your email");
+  };
+
   return (
     <main className="container d-flex flex-column">
       <div className="row align-items-center justify-content-center min-vh-100">
@@ -17,7 +36,7 @@ const ForgotPassword = () => {
               Don't worry, we'll send you an email to reset your password.
             </p>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Email</label>
                 <input
@@ -26,6 +45,7 @@ const ForgotPassword = () => {
                   className="form-control"
                   placeholder="Enter your email"
                   required
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 

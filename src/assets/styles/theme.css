@@ -12,3 +12,15 @@ body {
   background-color: var(--app-bg) !important;
   color: var(--text-primary);
 }
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+}
+

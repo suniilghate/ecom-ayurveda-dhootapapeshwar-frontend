@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TermsModal from "../../components/TermsModal/TermsModal";
+import { toast } from "react-toastify";
 import "./register.css";
 
 const Register = () => {
@@ -10,6 +11,34 @@ const Register = () => {
   const openModal = (type) => {
     setModalType(type);
     setShowModal(true);
+  };
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+   const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      !form.name ||
+      !form.email ||
+      !form.password ||
+      !form.confirmPassword
+    ) {
+      toast.error("All fields are required");
+      return;
+    }
+
+    if (form.password !== form.confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
+    toast.success("Account created successfully");
   };
 
   return (
@@ -35,7 +64,7 @@ const Register = () => {
                 </div>
 
                 {/* Form */}
-                <form>
+                <form onSubmit={handleSubmit}>
                   {/* Username */}
                   <div className="mb-3">
                     <label className="form-label">User Name</label>
@@ -44,6 +73,7 @@ const Register = () => {
                       className="form-control"
                       placeholder="Enter your name"
                       required
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                     />
                   </div>
 
@@ -55,6 +85,7 @@ const Register = () => {
                       className="form-control"
                       placeholder="Email address"
                       required
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                   </div>
 
@@ -66,6 +97,7 @@ const Register = () => {
                       className="form-control"
                       placeholder="********"
                       required
+                      onChange={(e) => setForm({ ...form, password: e.target.value })}
                     />
                   </div>
 
@@ -77,6 +109,9 @@ const Register = () => {
                       className="form-control"
                       placeholder="********"
                       required
+                      onChange={(e) =>
+                        setForm({ ...form, confirmPassword: e.target.value })
+                      }
                     />
                   </div>
 

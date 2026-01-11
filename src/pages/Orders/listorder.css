@@ -1,0 +1,64 @@
+.page-item.active .page-link {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.page-link:hover {
+  background-color: #334155;
+}
+
+.table-dark-custom {
+  --bs-table-bg: #1E293B;
+  --bs-table-color: #E5E7EB;
+  --bs-table-border-color: #334155;
+}
+
+.table-dark-custom th {
+  color: #CBD5E1;
+}
+
+.table-dark-custom tbody tr:hover {
+  background-color: #334155;
+}
+
+.page-link {
+  background-color: #ffffff;
+  color: #0d6efd;
+}
+
+.pagination-dark .page-link {
+  background-color: #1E293B;
+  color: #E5E7EB;
+  border: 1px solid #334155;
+}
+
+.pagination-dark .page-link:hover {
+  background-color: #334155;
+  color: #FFFFFF;
+}
+
+.pagination-dark .page-item.active .page-link {
+  background-color: #3B82F6;
+  border-color: #3B82F6;
+  color: #FFFFFF;
+}
+
+.pagination-dark .page-item.disabled .page-link {
+  background-color: #1E293B;
+  color: #64748B;
+  border-color: #334155;
+  cursor: not-allowed;
+}
+
+.status-dropdown {
+  background-color: #f9fafb;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.status-dropdown option {
+  color: #111827;
+  background-color: #ffffff;
+}

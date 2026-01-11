@@ -1,0 +1,51 @@
+.sidebar {
+  width: 220px;
+  background: var(--card-bg);
+  min-height: calc(100vh - 120px);
+  padding: 16px;
+  border-right: 1px solid var(--border-color);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  color: var(--text-primary);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.submenu li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.menu-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: block;
+}
+
+.submenu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #615bbd;
+}
+

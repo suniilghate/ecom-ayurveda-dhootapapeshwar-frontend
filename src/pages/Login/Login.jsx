@@ -1,7 +1,38 @@
 import React from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useAuth } from "../../context/AuthContext";
 import "./login.css";
 
 const Login = () => {
+  const { dispatch } = useAuth();
+   const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.email || !form.password) {
+      toast.error("Email and Password are required");
+      return;
+    }
+
+    if (!form.email.includes("@")) {
+      toast.warning("Please enter a valid email");
+      return;
+    }
+
+    // TEMP SUCCESS (API will replace this)
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: { email: form.email },
+    });
+
+    toast.success("Login successful");
+  };
+
   return (
     <main className="login-page">
       <div className="login-card card smooth-shadow-md">
@@ -13,7 +44,7 @@ const Login = () => {
             <p>Please enter your user information.</p>
           </div>
 
-          <form>
+          <form onSubmit={handleSubmit}> 
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Username or email
@@ -24,6 +55,7 @@ const Login = () => {
                 className="form-control"
                 placeholder="Email address here"
                 required
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
             </div>
 
@@ -37,6 +69,7 @@ const Login = () => {
                 className="form-control"
                 placeholder="**************"
                 required
+                onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
             </div>
 

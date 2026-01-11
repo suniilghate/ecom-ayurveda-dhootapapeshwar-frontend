@@ -1,0 +1,53 @@
+.app-header {
+  height: 60px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-logo {
+  height: 32px;
+}
+
+.header-center h6 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.profile-dropdown {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.profile-dropdown .dropdown-item {
+  color: var(--text-primary);
+}
+
+.profile-dropdown .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.profile-dropdown .logout {
+  color: #ef4444;
+}
+
+.avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.avatar-btn::after {
+  display: none; /* remove default caret */
+}

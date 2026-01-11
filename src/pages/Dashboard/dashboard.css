@@ -1,0 +1,6 @@
+.dashboard-content {
+  padding: 20px;
+  flex: 1;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}

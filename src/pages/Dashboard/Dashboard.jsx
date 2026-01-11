@@ -1,9 +1,13 @@
+//import DashboardLayout from "../../layouts/DashboardLayout";
+import "./dashboard.css";
+
 const Dashboard = () => {
   return (
-    <div className="container mt-5">
-      <h2>Dashboard</h2>
-    </div>
-  )
-}
+    <>
+      <h4 className="mb-3">Dashboard</h4>
+      <p>Welcome to your admin dashboard.</p>
+    </>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
