@@ -12,10 +12,13 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import AddProduct from "../pages/Products/AddProduct";
 import ListProduct from "../pages/Products/ListProduct";
 import BuyProduct from "../pages/Products/BuyProduct";
+import EditProduct from "../pages/Products/EditProduct";
 
 // Orders
 import AddOrder from "../pages/Orders/AddOrder";
 import ListOrder from "../pages/Orders/ListOrder";
+
+
 
 const AppRouter = () => {
   return (
@@ -36,6 +39,7 @@ const AppRouter = () => {
           <Route path="products/add" element={<AddProduct />} />
           <Route path="products/list" element={<ListProduct />} />
           <Route path="products/buy" element={<BuyProduct />} />
+          <Route path="products/edit/:id" element={<EditProduct />} />
 
           {/* Orders */}
           <Route path="orders/add" element={<AddOrder />} />

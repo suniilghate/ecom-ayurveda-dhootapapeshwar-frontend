@@ -6,12 +6,15 @@ import "./login.css";
 
 const Login = () => {
   const { dispatch } = useAuth();
-   const [form, setForm] = useState({
+
+  const [form, setForm] = useState({
     email: "",
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.email || !form.password) {
@@ -24,13 +27,31 @@ const Login = () => {
       return;
     }
 
-    // TEMP SUCCESS (API will replace this)
-    dispatch({
-      type: "LOGIN_SUCCESS",
-      payload: { email: form.email },
-    });
+    try {
+      setLoading(true);
 
-    toast.success("Login successful");
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/login",
+        form
+      );
+
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: {
+          user: res.data.user,
+          token: res.data.token,
+        },
+      });
+
+      toast.success(res.data.message || "Login successful");
+
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message || "Invalid credentials"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

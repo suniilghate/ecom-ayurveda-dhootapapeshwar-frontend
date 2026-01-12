@@ -20,7 +20,7 @@ const Register = () => {
     confirmPassword: "",
   });
 
-   const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -38,7 +38,33 @@ const Register = () => {
       return;
     }
 
-    toast.success("Account created successfully");
+    try {
+      const response = await fetch("http://localhost:3000/api/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          password: form.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        toast.error(data.message || "Registration failed");
+        return;
+      }
+
+      toast.success("Account created successfully");
+      console.log("User:", data.user);
+
+    } catch (error) {
+      toast.error("Server error");
+      console.error(error);
+    }
   };
 
   return (

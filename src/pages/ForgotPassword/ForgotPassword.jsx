@@ -4,7 +4,9 @@ import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email) {
@@ -16,8 +18,24 @@ const ForgotPassword = () => {
       toast.warning("Invalid email address");
       return;
     }
+    try {
+      setLoading(true);
 
-    toast.success("Password reset link sent to your email");
+      const res = await axios.post(
+        "http://localhost:5000/api/user/forgot-password",
+        { email }
+      );
+
+      toast.success(res.data.message || "Reset link sent");
+      setEmail("");
+
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message || "Something went wrong"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

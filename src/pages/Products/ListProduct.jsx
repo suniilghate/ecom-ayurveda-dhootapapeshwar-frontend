@@ -2,6 +2,7 @@ import { useState } from "react";
 import products from "../../data/products";
 //import DashboardLayout from "../../layouts/DashboardLayout";
 import "../Products/listproduct.css";
+import { Link } from "react-router-dom";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -16,6 +17,28 @@ const ListProduct = () => {
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure?")) return;
+
+    try {
+      await axios.delete(
+        `http://localhost:5000/api/products/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      toast.success("Product deleted");
+      setProducts(products.filter(p => p._id !== id));
+
+    } catch {
+      toast.error("Delete failed");
+    }
+  };
+
 
   return (
     <>
@@ -106,10 +129,17 @@ const ListProduct = () => {
                         <button className="btn btn-sm btn-outline-primary me-2">
                           View
                         </button>
-                        <button className="btn btn-sm btn-outline-warning me-2">
-                          Edit
+                        <button className="btn btn-sm btn-outline-primary me-2">
+                          <Link
+                            to={`/products/edit/${product._id}`}
+                            className="btn btn-sm btn-primary"
+                          >
+                            Edit
+                          </Link>
                         </button>
-                        <button className="btn btn-sm btn-outline-danger">
+                        <button className="btn btn-sm btn-outline-danger"
+                          onClick={() => handleDelete(product._id)}
+                        >
                           Delete
                         </button>
                       </td>

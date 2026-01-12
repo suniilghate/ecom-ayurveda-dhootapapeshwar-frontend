@@ -1,5 +1,7 @@
 import "./addproduct.css";
 import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -24,12 +26,46 @@ const AddProduct = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Product Data 👉", formData);
-    alert("Product Created (check console)");
+  const handleSubmit = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!formData.title) {
+        toast.error("Product title is required");
+        return;
+      }
+
+      const data = new FormData();
+
+      Object.keys(formData).forEach((key) => {
+        data.append(key, formData[key]);
+      });
+
+      images.forEach((img) => {
+        data.append("images", img);
+      });
+
+      await axios.post(
+        "http://localhost:5000/api/products/add",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      toast.success("Product created successfully");
+
+    } catch (error) {
+      toast.error("Failed to create product");
+    }
   };
 
+  const [images, setImages] = useState([]);
+
   return (
+    
     <div className="container-fluid add-product-page">
       <div className="row">
         <div className="col-lg-12 col-md-12 col-12">
@@ -80,8 +116,15 @@ const AddProduct = () => {
               <h4 className="mb-4">Product Gallery</h4>
 
               <div className="mb-4">
-                <input type="file" className="form-control mb-3" />
-                <input type="file" className="form-control" multiple />
+                <input 
+                  type="file" 
+                  className="form-control mb-3"
+                  onChange={(e) => setImages([e.target.files[0]])} />
+                <input 
+                  type="file" 
+                  className="form-control" 
+                  onChange={(e) => setImages([...e.target.files])}
+                  multiple />
               </div>
             </div>
           </div>
