@@ -1,0 +1,162 @@
+.product-card {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.product-card .card-text {
+  color: #cbd5f5;
+}
+
+.product-card img {
+  background: #0f172a;
+  padding: 10px;
+}
+
+.product-card {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.product-card img {
+  padding: 10px;
+  background: #0f172a;
+}
+
+/* Skeleton Loader */
+.skeleton-img {
+  height: 160px;
+  background: linear-gradient(
+    90deg,
+    #334155 25%,
+    #475569 37%,
+    #334155 63%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text {
+  height: 14px;
+  background: #334155;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+
+.product-card {
+  position: relative;
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* Image */
+.product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Card Body */
+.card-body {
+  padding: 1rem;
+  color: #e5e7eb;
+}
+
+.product-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Price */
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.price-discounted {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.price-original {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status-badge.inactive {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.product-card .btn {
+  background-color: #3b82f6;
+  border: none;
+}
+
+.product-card .btn:hover {
+  background-color: #2563eb;
+}
+
+.product-card .btn:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+

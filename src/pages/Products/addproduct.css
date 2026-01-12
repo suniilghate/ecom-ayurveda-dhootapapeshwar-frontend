@@ -1,0 +1,100 @@
+/* Page background */
+.add-product-page {
+  background-color: #f3f4f6;
+}
+
+/* Cards */
+.add-product-page .card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Inputs & Selects */
+.add-product-page .form-control,
+.add-product-page .form-select,
+.add-product-page textarea {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+.add-product-page .form-control:focus,
+.add-product-page .form-select:focus,
+.add-product-page textarea:focus {
+  background-color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: none;
+}
+
+/* Labels */
+.add-product-page .form-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Dropzone */
+.add-product-page .dropzone {
+  background-color: #f9fafb;
+  border: 2px dashed #c7d2fe;
+  padding: 30px;
+  text-align: center;
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+/* Editor wrapper */
+.editor-wrapper {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.dashboard-content {
+    background-color: #374151 !important;
+}
+
+.add-product-page {
+    background-color: #374151 !important;
+}
+
+.product-gallery {
+    background-color: #1E293B !important;
+}
+
+.product-info {
+    background-color: #1E293B !important;
+    color: #e5e7eb !important;
+}
+
+.product-info .form-label{
+    color: #e5e7eb !important;
+}
+
+.card-stock {
+    background-color: #1E293B !important;
+    color: #e5e7eb !important;
+}
+
+.card-stock .form-label{
+    color: #e5e7eb !important;
+}
+
+.card-status {
+    background-color: #1E293B !important;
+    color: #e5e7eb !important;
+}
+
+.card-status .form-label{
+    color: #e5e7eb !important;
+}
+
+.card-price {
+    background-color: #1E293B !important;
+    color: #e5e7eb !important;
+}
+
+.card-price .form-label{
+    color: #e5e7eb !important;
+}

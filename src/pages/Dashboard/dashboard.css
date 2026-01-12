@@ -4,3 +4,34 @@
   background: var(--bg-main);
   color: var(--text-primary);
 }
+
+.card-lift {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.table-centered th,
+.table-centered td {
+  vertical-align: middle;
+}
+
+.statcard {
+  background-color: #0F172A;
+}
+
+.statcard span {
+  color: aliceblue !important;
+}
+
+.recent-order-div {
+  background-color: #0F172A;
+  color: aliceblue !important;
+}
+
+.recent-order-tbl {
+  background-color: #1E293B !important;
+}
